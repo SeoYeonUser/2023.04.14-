@@ -40,12 +40,18 @@ public class BookManager {
 //		전달받은 도서번호를 이용하여 해당하는 인덱스에 도서를 제거한다.
 //		System.out.println("booklist size 값은 " + booklist.size());
 //		System.out.println("index입력한 값은 " + index);
+		boolean isDel = false;
+		for(int i = 0; i < booklist.size(); i++) {
+			if(booklist.get(i).getbNo() == index) {
+				booklist.remove(i);
+				isDel = true;
+			}
+		}
 		
-		if(booklist.size() <= index-1) {
-			System.out.print("삭제 불가능. ");
-		} else {
-			booklist.remove(index-1);
+		if (isDel) {
 			System.out.print("삭제 되었습니다. ");
+		} else {
+			System.out.print("삭제 불가능. ");
 		}
 		System.out.println("남아있는 도서 리스트는 " + booklist.size() + "개 입니다.");
 	}
