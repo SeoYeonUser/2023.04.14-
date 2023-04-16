@@ -15,13 +15,14 @@ public class BookDTO {
 //	기본 생성자
 	public BookDTO() {}
 	
-//	매개변수 생성자
-	public BookDTO(int bNo, int category, String title, String author) {
-		this.bNo = bNo;
-		this.category = category;
-		this.title = title;
-		this.author = author;
-	}
+//	매개변수 생성자 bNo 포함
+//	public BookDTO(int bNo, int category, String title, String author) {
+//		this.bNo = bNo;
+//		this.category = category;
+//		this.title = title;
+//		this.author = author;
+//	}
+
 
 	@Override
 	public String toString() {

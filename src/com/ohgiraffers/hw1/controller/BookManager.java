@@ -26,8 +26,6 @@ public class BookManager {
 	public void addBook(BookDTO book) {
 //		전달받은 도서정보를 필드에선언한 List에 담는다.
 //		System.out.println("사이즈" + booklist.size());
-//		도서번호 bNo를 요소 추가할 때마다 자동으로 1씩 증가시킴
-		book.setbNo(booklist.size()+1);
 		booklist.add(book);
 //		System.out.println("book : " + book);
 //		System.out.println("booklist : " + booklist);
@@ -41,6 +39,7 @@ public class BookManager {
 			if(booklist.get(i).getbNo() == index) {
 				booklist.remove(i);
 				isDel = true;
+				i--; // ArrayList는 요소가 삭제되면 그만큼 size가 줄어들기 때문에 i--했음
 			}
 		}
 		
