@@ -106,9 +106,16 @@ public class BookMenu {
 	}
 	
 	public BookDTO inputBook() {
+		int bNo = 0; //도서 번호
 		int category = 0; //장르 분류 번호
 		String title = ""; //도서 제목
 		String author = ""; //도서 저자
+		
+		while(bNo < 1) {
+			System.out.print("도서 번호를 입력 해주세요(1부터 시작합니다) : ");
+			bNo = sc.nextInt();
+			sc.nextLine(); //버퍼비움
+		}
 		
 		System.out.print("도서 제목 입력 : ");
 		title = sc.nextLine();
@@ -123,7 +130,7 @@ public class BookMenu {
 		author = sc.nextLine();
 		
 //		매개변수 생성자 호출해서 객체 만들고 리턴
-		BookDTO book = new BookDTO(category, title, author);
+		BookDTO book = new BookDTO(bNo, category, title, author);
 		return book;
 	}
 	
