@@ -9,12 +9,14 @@ import com.ohgiraffers.hw1.model.dto.BookDTO;
 
 /**
  * 삭제, 검색, 추가 등의 기능, 동작을 담당하고 있는 클래스이다.
- * 추가하는 도서의 bNo번호의 값 할당이 이 클래스에서 이뤄진다.
- * ArrayList의 size를 토대로 1씩 자동 증가되는데
- * 도서를 삭제하고 다시 등록하면 번호가 중복되는 문제가 있음.
- * 그리고 정렬과 관련된 클래스들을 호출하여 상호작용하고 있다.
+ * 정렬과 관련된 클래스들을 호출하여 상호작용하고 있다.
  * 
  */
+
+// 추가하는 도서의 bNo번호의 값 어떻게 할당해야 할지 모르겠음.
+// ArrayList의 size를 토대로 +1해서 할당했는데
+// 도서 삭제하고 다시 등록하면 번호가 중복되는 문제가 있음.
+
 public class BookManager {
 	
 	private ArrayList<BookDTO> booklist;
