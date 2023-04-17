@@ -79,13 +79,14 @@ public class BookMenu {
 					//if 결과가 있을 경우 해당 도서 출력
 					//else 결과 없으면 조회한 도서가 목록에 없습니다.
 					System.out.println(">>>>>>>>>>>>> 4. 도서 검색 출력");
+					
 					String result = bm.searchBook(inputBookTitle());
+					
 					if(result == "") {
-						System.out.println("조회한 도서가 목록에 없습니다.");
-					} else {
-						System.out.println(result);
+						result = "조회한 도서가 목록에 없습니다.\n";
 					}
-					System.out.println();
+					
+					System.out.println("\n" + result);
 					break;
 				case 5 : //전체 출력
 					System.out.println(">>>>>>>>>>>>> 5. 도서 전체 출력");
@@ -102,7 +103,6 @@ public class BookMenu {
 					break;
 			}
 		}		
-		
 	}
 	
 	public BookDTO inputBook() {
@@ -158,12 +158,11 @@ public class BookMenu {
 		int num = 0;
 		
 		while (num < 1 || num > 4) {
-			System.out.print("도서번호 오름차순 1, 도서번호 내림차순 2, 책 제목 오름차순 3, 책 제목 내림차순 4 : ");
+			System.out.print("1.도서번호 오름차순, 2.도서번호 내림차순, 3.책 제목 오름차순, 4.책 제목 내림차순 : ");
 			num = sc.nextInt();
 			sc.nextLine();//버퍼비움
 		}
 
-		List<BookDTO> printList = bm.sortedBookList(num); 
-		return printList;
+		return bm.sortedBookList(num);
 	}
 }

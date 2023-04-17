@@ -80,34 +80,42 @@ public class BookManager {
 	
 	public List<BookDTO> sortedBookList(int type) {
 //		사용자가 선택한 정렬방식에 따라서 오름차순/내림차순 정렬하여 값을 반환한다.
-		
-		List<BookDTO> sortList = booklist;
+
 //		도서번호 오름차순 1, 도서번호 내림차순 2, 책 제목 오름차순 3, 책 제목 내림차순 4 :
 		
 		switch (type) {
 			case 1 : // 도서번호 오름차순
-				new AscBookNo().compare(sortList, sortList);
+				System.out.println("\n--------도서번호 오름차순 정렬을 시작합니다.");
+				booklist.sort(new AscBookNo());
 				break;
 				
 			case 2 : // 도서번호 내림차순
-				new DescBookNo().compare(sortList, sortList);
+				System.out.println("\n--------도서번호 내림차순 정렬을 시작합니다.");
+				booklist.sort(new DescBookNo());
 				break;
 				
 			case 3 : // 도서제목 오름차순
-				new AscBookTitle().compare(sortList, sortList);
+				System.out.println("\n--------도서제목 오름차순 정렬을 시작합니다.");
+				booklist.sort(new AscBookTitle());
 				break;
 				
 			case 4 : // 도서제목 내림차순
-				new DescBookTitle().compare(sortList, sortList);
-				
+				System.out.println("\n--------도서제목 내림차순 정렬을 시작합니다.");
+				booklist.sort(new DescBookTitle());
+				break;
 //			default: 넘어오는 값의 범위가 검증을 통해 고정되어 있어서 생략함
 		}
 		
-		return sortList;
+		return booklist;
 	}
 	
 	public void printBookList(List<BookDTO> printList) {
-//	정렬된 list객체의 도서를 출력한다	
+//	정렬된 list객체의 도서를 출력한다
+		System.out.println("-------- 정렬 되었습니다.");
+
+		for(BookDTO b : printList) {
+			System.out.println(b);
+		}
+		System.out.println("");
 	}
-	
 }
